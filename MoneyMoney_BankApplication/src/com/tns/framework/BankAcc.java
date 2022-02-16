@@ -12,28 +12,27 @@ public BankAcc(int accNo, String accNm, float accBal) {
 	this.accNm = accNm;
 	this.accBal = accBal;
 }
-public void withdraw(float accBal)
+public void withdraw(float amount)
 {
 
 }
-public void deposite(float accBal)
+public void deposite(float amount)
 {
+       accBal=accBal+amount;
+       System.out.println("transaction successfully completed");
 
 }
+
 @Override
 public String toString() {
-	return "BankAcc [accNo=" + accNo + ", accNm=" + getAccNm() + ", accBal=" + accBal + ", getClass()=" + getClass()
+	return "BankAcc [accNo=" + accNo + ", accNm=" + accNm + ", accBal=" + accBal + ", getClass()=" + getClass()
 			+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 }
-public String getAccNm() {
-	return accNm;
+public float getAccBal() {
+	return accBal;
 }
-public void setAccNm(String accNm) {
-	this.accNm = accNm;
-}
+public void setAccBal(float accBal) {
+	this.accBal = accBal;
+  }
 
-	
-	
-	
-	
 }

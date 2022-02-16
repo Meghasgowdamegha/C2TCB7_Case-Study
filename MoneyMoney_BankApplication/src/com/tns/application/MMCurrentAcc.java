@@ -8,15 +8,41 @@ public class MMCurrentAcc extends CurrentAcc {
 		super(accNo, accNm, accBal, creditLimit);
 		// TODO Auto-generated constructor stub
 	}
-
-	public void withdraw(float MINBAL) {
- }
-
-	@Override
-	public String toString() {
-		return "MMCurrentAcc [accNo=" + accNo + ", accBal=" + accBal + ", toString()=" + super.toString()
-				+ ", getAccNm()=" + getAccNm() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+@Override
+	public void withdraw(float amount) {
+	super.withdraw(amount);
+	//lazy initialization 
+	if(amount>getCreditLimit()) {
+		System.out.println("Exceeding creditLimit");
+	}
+	else if(amount> getAccBal()) {
+		System.out.println("Insufficient Balance!!!");
+	} else {
+		try {
+		setAccBal(getAccBal()-amount);
+		}finally {
+		System.out.println("Transaction successfully completed");
+		}
 	}
 	
-	
+}
+
+@Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return super.toString();
+}
+
+@Override
+public float getAccBal() {
+	// TODO Auto-generated method stub
+	return super.getAccBal();
+}
+
+@Override
+public void setAccBal(float accBal) {
+	// TODO Auto-generated method stub
+	super.setAccBal(accBal);
+}
+
 }

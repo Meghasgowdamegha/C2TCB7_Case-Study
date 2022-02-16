@@ -4,25 +4,37 @@ import com.tns.framework.SavingAcc;
 
 public class MMSavingAcc extends SavingAcc {
 	
-	private static final float accBal=0;
+	private static float MINBAL = 0;
 	
-	public MMSavingAcc(int accNo, String accNm, float accBal, boolean isSalary) {
-		super(accNo, accNm, accBal, isSalary);
+	public MMSavingAcc(int accNo, String accNm, float accBal, boolean isSalaried) {
+		super(accNo, accNm, accBal, isSalaried);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void withdraw(float MINBAL) {
+	@Override
+	public void withdraw(float amount) {
+    super.withdraw(amount);
+		
+		MINBAL=getAccBal();
+		if(amount>MINBAL) {
+			System.out.println("Insufficient balance!!!");
+		}else {
+			setAccBal(getAccBal()-amount);
+			System.out.println("Transaction successfully completed");
+		}
+		
 	}
 
-	@Override
+
+    @Override
 	public String toString() {
-		return "MMSavingAcc [accNo=" + accNo + ", accBal=" + accBal + ", toString()=" + super.toString()
-				+ ", isSalary()=" + isSalary() + ", getAccNm()=" + getAccNm() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + "]";
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 	
-}
 	
+	
+}
 
 
 	
