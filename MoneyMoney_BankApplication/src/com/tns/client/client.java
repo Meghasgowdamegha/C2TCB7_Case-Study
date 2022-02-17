@@ -5,7 +5,7 @@ import com.tns.framework.BankFactory;
 import com.tns.framework.CurrentAcc;
 import com.tns.framework.SavingAcc;
 
-public class client1 {
+public class client {
 
 	private static BankFactory factory;
 	private static SavingAcc savingAcc;
