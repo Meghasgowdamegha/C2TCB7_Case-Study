@@ -1,38 +1,51 @@
 package com.tns.framework;
 
-public abstract class BankAcc {
+public class BankAcc 
+{
 
-protected int accNo;
-private String accNm;
+protected static int accNo;
+protected static String accNm;
 protected float accBal;
 
-public BankAcc(int accNo, String accNm, float accBal) {
-	super();
+public int getAccNo() {
+	return accNo;
+}
+public void setAccNo(int accNo) {
 	this.accNo = accNo;
-	this.accNm = accNm;
-	this.accBal = accBal;
 }
-public void withdraw(float amount)
-{
-
+public String getAccNm() {
+	return accNm;
 }
-public void deposite(float amount)
-{
-       accBal=accBal+amount;
-       System.out.println("transaction successfully completed");
-
+public void setAccNm(String accNm) {
+	this.accNm=accNm;
 }
-
-@Override
-public String toString() {
-	return "BankAcc [accNo=" + accNo + ", accNm=" + accNm + ", accBal=" + accBal + ", getClass()=" + getClass()
-			+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-}
-public float getAccBal() {
+public float getaccBal() {
 	return accBal;
 }
 public void setAccBal(float accBal) {
 	this.accBal = accBal;
+}
+
+public BankAcc(int accNo, String accNm, float accBal)
+{
+	
+	this.setAccNo(accNo);
+	this.setAccNm(accNm);
+	this.accBal = accBal;
+}
+public void withdraw(float accBal)
+{
+System.out.println("acc bal is:"+accBal);
+}
+public void deposite(float accBal)
+{
+System.out.println("acc bal after withdraw:"+accBal);
+}
+      
+@Override
+public String toString() {
+	return "BankAcc [accNo=" + accNo + ", accNm=" + getAccNm() + ", accBal=" + accBal + ", getClass()=" + getClass()
+			+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
   }
 
 }

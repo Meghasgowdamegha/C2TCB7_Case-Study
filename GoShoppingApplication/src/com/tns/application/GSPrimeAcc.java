@@ -5,10 +5,8 @@ import com.tns.framework.PrimeAcc;
 public class GSPrimeAcc extends PrimeAcc 
 {
 
-	private static final float charges=0; 
-	
-	
-	public GSPrimeAcc(int accNo, String accNm, float charges, boolean isPrime) 
+    private static final float charges=1000; 
+	public GSPrimeAcc() 
 	{
 		super(accNo, accNm, charges, isPrime);
 		// TODO Auto-generated constructor stub
@@ -16,20 +14,16 @@ public class GSPrimeAcc extends PrimeAcc
 	
 	public void bookProduct(float charges)
 	{
-		
+	   System.out.println("Dear prime user, Your product charges are: "+charges);	
 	}
 
 	@Override
 	public String toString() {
-		return "GSPrimeAcc [isPrime=" + isPrime() + ", accNo=" + accNo + ", charges=" + charges + ", toString()="
-				+ super.toString() + ", getAccNm()=" + getAccNm() + ", getClass()=" + getClass() + ", hashCode()="
+		return "GSPrimeAcc [getCharges()=" + getCharges() + ", toString()=" + super.toString() + ", getAccNo()="
+				+ getAccNo() + ", getAccNm()=" + getAccNm() + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + "]";
 	}
 
-	public void getCharge() {
-		// TODO Auto-generated method stub
-		
-	}
 	
+	}
 
-}

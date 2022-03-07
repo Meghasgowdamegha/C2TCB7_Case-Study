@@ -1,8 +1,8 @@
 package com.tns.framework;
 
-public abstract class ShopFactory 
+public interface ShopFactory 
 {
 
-	public abstract PrimeAcc getNewPrimeAccount(int AccNo, String accNm, float charges, boolean isPrime);
-	public abstract NormalAcc getNewNormalAccount(int AccNo, String accNm, float charges, float deliveryCharges);
+public abstract PrimeAcc getNewPrimeAccount(int AccNo, String accNm, float charges, boolean isPrime);
+public abstract NormalAcc getNewNormalAccount(int AccNo, String accNm, float charges, float deliveryCharges);
 }

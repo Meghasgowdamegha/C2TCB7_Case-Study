@@ -1,23 +1,24 @@
 package com.tns.application;
 
 import com.tns.framework.NormalAcc;
+
 import com.tns.framework.PrimeAcc;
 import com.tns.framework.ShopFactory;
 
-public class GSShopFactory extends ShopFactory 
+public class GSShopFactory implements ShopFactory 
 {
 
 	@Override
-	public PrimeAcc getNewPrimeAccount(int AccNo, String accNm, float charges, boolean isPrime) {
-		// TODO Auto-generated method stub
-		return null;
+	public GSPrimeAcc getNewPrimeAccount(int AccNo, String accNm, float charges, boolean isPrime) 
+	{
+		GSPrimeAcc gsprime = new GSPrimeAcc();
+		return gsprime;
 	}
 
 	@Override
-	public NormalAcc getNewNormalAccount(int AccNo, String accNm, float charges, float deliveryCharges) {
-		// TODO Auto-generated method stub
-		return null;
+	public NormalAcc getNewNormalAccount(int accNo, String accNm, float charges, float deliveryCharges) 
+	{
+		GSNormalAcc gsnormal = new GSNormalAcc(accNo, accNm, charges, deliveryCharges);
+		return gsnormal;
 	}
-
-	
 }
