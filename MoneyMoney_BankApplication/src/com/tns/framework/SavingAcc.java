@@ -9,9 +9,9 @@ public SavingAcc(int accNo, String accNm, float accBal, boolean isSalaried) {
 		super(accNo, accNm, accBal);
 		this.setSalary(isSalaried);
 	}
-public void withdraw(float accBal)
+public void withdraw(float withdraw)
 {
-	System.out.println("your bal is:"+accBal);
+	System.out.println("Balance after withdraw:"+accBal);
 }
 
 @Override

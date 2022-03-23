@@ -2,13 +2,13 @@ package com.tns.framework;
 
 public class CurrentAcc extends BankAcc {
 	
-	protected static float creditLimit=50;
+	protected static float creditLimit=20000;
 	
         public CurrentAcc(int accNo, String accNm, float accBal, float creditLimit) {
 		super(accNo, accNm, accBal);
 		CurrentAcc.creditLimit = creditLimit;
 	}
-   public void withdraw(float creditLimit)
+   public void withdraw(float withdraw)
 {
    System.out.println("your credit limit is:"+creditLimit);
 }

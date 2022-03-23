@@ -7,16 +7,16 @@ import com.tns.framework.SavingAcc;
 public class MMBankFactory implements BankFactory {
 
 	@Override
-	public MMSavingAcc getNewSavingAccount(int AccNO, String accNm, float accBal, boolean isSalaried) 
+	public MMSavingAcc getNewSavingAccount(int AccNo, String accNm, float accBal, boolean isSalaried) 
 	{
 		MMSavingAcc mmsaving = new MMSavingAcc();
 		return mmsaving;
 	}
 
 	@Override
-	public MMCurrentAcc getNewCurrentAccount(int AccNO, String accNm, float accBal, float creditLimit) 
+	public MMCurrentAcc getNewCurrentAccount(int AccNo, String accNm, float accBal, float creditLimit) 
 	{
-	MMCurrentAcc mmcurrent = new MMCurrentAcc(AccNO, accNm, accBal, creditLimit);
+	MMCurrentAcc mmcurrent = new MMCurrentAcc(AccNo, accNm, accBal, creditLimit);
 		return mmcurrent;
 	}
    
